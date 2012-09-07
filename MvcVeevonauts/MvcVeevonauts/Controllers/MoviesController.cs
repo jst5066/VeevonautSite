@@ -6,33 +6,32 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcVeevonauts.Models;
-using MvcVeevonauts.VeevonautsDBContext__MvcVeevonauts;
 
 namespace MvcVeevonauts.Controllers
 { 
-    public class VeevonautsController : Controller
+    public class MoviesController : Controller
     {
-        private Models_ db = new Models_();
+        private MovieDBContext db = new MovieDBContext();
 
         //
-        // GET: /Veevonauts/
+        // GET: /Movies/
 
         public ViewResult Index()
         {
-            return View(db.Veevonauts.ToList());
+            return View(db.Movies.ToList());
         }
 
         //
-        // GET: /Veevonauts/Details/5
+        // GET: /Movies/Details/5
 
         public ViewResult Details(int id)
         {
-            Veevonaut veevonaut = db.Veevonauts.Find(id);
-            return View(veevonaut);
+            Movie movie = db.Movies.Find(id);
+            return View(movie);
         }
 
         //
-        // GET: /Veevonauts/Create
+        // GET: /Movies/Create
 
         public ActionResult Create()
         {
@@ -40,62 +39,62 @@ namespace MvcVeevonauts.Controllers
         } 
 
         //
-        // POST: /Veevonauts/Create
+        // POST: /Movies/Create
 
         [HttpPost]
-        public ActionResult Create(Veevonaut veevonaut)
+        public ActionResult Create(Movie movie)
         {
             if (ModelState.IsValid)
             {
-                db.Veevonauts.Add(veevonaut);
+                db.Movies.Add(movie);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            return View(veevonaut);
+            return View(movie);
         }
         
         //
-        // GET: /Veevonauts/Edit/5
+        // GET: /Movies/Edit/5
  
         public ActionResult Edit(int id)
         {
-            Veevonaut veevonaut = db.Veevonauts.Find(id);
-            return View(veevonaut);
+            Movie movie = db.Movies.Find(id);
+            return View(movie);
         }
 
         //
-        // POST: /Veevonauts/Edit/5
+        // POST: /Movies/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Veevonaut veevonaut)
+        public ActionResult Edit(Movie movie)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(veevonaut).State = EntityState.Modified;
+                db.Entry(movie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(veevonaut);
+            return View(movie);
         }
 
         //
-        // GET: /Veevonauts/Delete/5
+        // GET: /Movies/Delete/5
  
         public ActionResult Delete(int id)
         {
-            Veevonaut veevonaut = db.Veevonauts.Find(id);
-            return View(veevonaut);
+            Movie movie = db.Movies.Find(id);
+            return View(movie);
         }
 
         //
-        // POST: /Veevonauts/Delete/5
+        // POST: /Movies/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            Veevonaut veevonaut = db.Veevonauts.Find(id);
-            db.Veevonauts.Remove(veevonaut);
+            Movie movie = db.Movies.Find(id);
+            db.Movies.Remove(movie);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
