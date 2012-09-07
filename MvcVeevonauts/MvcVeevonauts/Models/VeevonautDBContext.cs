@@ -15,7 +15,7 @@ namespace MvcVeevonauts.Models
         public int Level { get; set; }
     }
 
-    public class VeevonautDBContext : DbContext
+    public class VeevonautsDBContext : DbContext
     {
         public DbSet<Veevonaut> Veevonauts { get; set; }
     }
