@@ -30,14 +30,4 @@ namespace MvcVeevonauts.Models
         [StringLength(5)]
         public string Rating { get; set; }
     }
-
-    public class MovieDBContext : DbContext
-    {
-        public DbSet<Movie> Movies { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieDBContext, Configuration>());
-        }
-    }
 }
