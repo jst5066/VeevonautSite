@@ -37,7 +37,7 @@ namespace MvcVeevonauts
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            Database.SetInitializer<MvcVeevonauts.Models.MovieDBContext>(
+            Database.SetInitializer(
                 new CreateDatabaseIfNotExists<MvcVeevonauts.Models.MovieDBContext>());
         }
     }
