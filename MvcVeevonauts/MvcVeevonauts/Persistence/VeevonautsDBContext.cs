@@ -10,6 +10,7 @@ namespace MvcVeevonauts.Models
     public class VeevonautsDBContext : DbContext
     {
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<VirtualVeevonaut> VirtualVeevonauts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

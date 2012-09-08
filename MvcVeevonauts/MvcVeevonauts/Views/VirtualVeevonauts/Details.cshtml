@@ -1,0 +1,55 @@
+﻿@model MvcVeevonauts.Models.VirtualVeevonaut
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VirtualVeevonaut</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+
+    <div class="display-label">Intelligence</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Intelligence)
+    </div>
+
+    <div class="display-label">Athleticism</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Athleticism)
+    </div>
+
+    <div class="display-label">Strength</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Strength)
+    </div>
+
+    <div class="display-label">Speed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Speed)
+    </div>
+
+    <div class="display-label">Artistry</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Artistry)
+    </div>
+
+    <div class="display-label">ReactionTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReactionTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

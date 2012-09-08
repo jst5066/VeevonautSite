@@ -1,0 +1,58 @@
+﻿@model MvcVeevonauts.Models.VirtualVeevonaut
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>VirtualVeevonaut</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+
+    <div class="display-label">Intelligence</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Intelligence)
+    </div>
+
+    <div class="display-label">Athleticism</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Athleticism)
+    </div>
+
+    <div class="display-label">Strength</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Strength)
+    </div>
+
+    <div class="display-label">Speed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Speed)
+    </div>
+
+    <div class="display-label">Artistry</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Artistry)
+    </div>
+
+    <div class="display-label">ReactionTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReactionTime)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

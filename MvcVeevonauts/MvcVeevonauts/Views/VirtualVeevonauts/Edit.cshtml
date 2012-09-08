@@ -1,0 +1,91 @@
+﻿@model MvcVeevonauts.Models.VirtualVeevonaut
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>VirtualVeevonaut</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Type)
+            @Html.ValidationMessageFor(model => model.Type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Intelligence)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Intelligence)
+            @Html.ValidationMessageFor(model => model.Intelligence)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Athleticism)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Athleticism)
+            @Html.ValidationMessageFor(model => model.Athleticism)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Strength)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Strength)
+            @Html.ValidationMessageFor(model => model.Strength)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Speed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Speed)
+            @Html.ValidationMessageFor(model => model.Speed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Artistry)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Artistry)
+            @Html.ValidationMessageFor(model => model.Artistry)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReactionTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReactionTime)
+            @Html.ValidationMessageFor(model => model.ReactionTime)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
