@@ -3,7 +3,7 @@ using MvcVeevonauts.Models;
 
 namespace MvcVeevonauts.Persistence
 {
-    public class Configuration : DbMigrationsConfiguration<MovieDBContext>
+    public class Configuration : DbMigrationsConfiguration<VeevonautsDBContext>
     {
         public Configuration()
         {

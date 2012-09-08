@@ -11,7 +11,7 @@ namespace MvcVeevonauts.Controllers
 { 
     public class MoviesController : Controller
     {
-        private MovieDBContext db = new MovieDBContext();
+        private VeevonautsDBContext db = new VeevonautsDBContext();
 
         //
         // GET: /Movies/

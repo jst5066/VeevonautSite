@@ -7,13 +7,13 @@ using MvcVeevonauts.Persistence;
 
 namespace MvcVeevonauts.Models
 {
-    public class MovieDBContext : DbContext
+    public class VeevonautsDBContext : DbContext
     {
         public DbSet<Movie> Movies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieDBContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VeevonautsDBContext, Configuration>());
         }
     }
 }
