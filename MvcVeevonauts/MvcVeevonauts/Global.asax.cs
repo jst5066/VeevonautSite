@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
 
 namespace MvcVeevonauts
 {
@@ -35,6 +36,8 @@ namespace MvcVeevonauts
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            Database.SetInitializer<MvcVeevonauts.Models.MovieDBContext>(new CreateDatabaseIfNotExists<MvcVeevonauts.Models.MovieDBContext>());
         }
     }
 }
