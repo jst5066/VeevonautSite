@@ -16,9 +16,9 @@ namespace MvcVeevonauts.Controllers
         //
         // GET: /Movies/
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
-            return View(db.Movies.ToList());
+            return RedirectToAction("SearchIndex");
         }
 
         //
