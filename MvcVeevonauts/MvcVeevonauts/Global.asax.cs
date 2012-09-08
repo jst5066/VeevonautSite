@@ -36,9 +36,6 @@ namespace MvcVeevonauts
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-
-            Database.SetInitializer(
-                new CreateDatabaseIfNotExists<MvcVeevonauts.Models.MovieDBContext>());
         }
     }
 }
