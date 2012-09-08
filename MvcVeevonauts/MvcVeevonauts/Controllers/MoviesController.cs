@@ -57,9 +57,13 @@ namespace MvcVeevonauts.Controllers
         //
         // GET: /Movies/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id = 0)
         {
             Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
             return View(movie);
         }
 
@@ -103,6 +107,19 @@ namespace MvcVeevonauts.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        public ActionResult SearchIndex(string searchString)
+        {
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(movies);
         }
     }
 }
