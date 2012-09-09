@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+//  Example: Store
 namespace MvcVeevonauts.Controllers
 {
     public class VirtualVeevonautBookController : Controller

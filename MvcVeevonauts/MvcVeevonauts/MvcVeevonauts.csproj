@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\VeevonautType.cs" />
     <Compile Include="Models\VirtualVeevonaut.cs" />
     <Compile Include="Persistence\VeevonautsDBContext.cs" />
     <Compile Include="Persistence\Configuration.cs" />
