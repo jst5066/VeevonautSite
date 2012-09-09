@@ -4,11 +4,19 @@
     ViewBag.Title = "Virtual Veevonauts Database";
 }
 
-<h2>Index</h2>
+<h2>Virtual Veevonauts Database</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@Html.ActionLink("Create New", "Create")
+
+@using (Html.BeginForm("Index", "VirtualVeevonauts", FormMethod.Get))
+{
+    <p>
+        Name: @Html.TextBox("searchString")
+        Type: @Html.DropDownList("VeevonautType", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
 <table>
     <tr>
         <th>
