@@ -16,9 +16,32 @@ namespace MvcVeevonauts.Controllers
         //
         // GET: /VirtualVeevonauts/
 
-        public ViewResult Index()
+        public ViewResult Index(string type, string searchString)
         {
-            return View(db.VirtualVeevonauts.ToList());
+            var TypeList = new List<string>();
+
+            var TypeQry = from d in db.VirtualVeevonauts
+                          orderby d.Type
+                          select d.Type;
+
+            TypeList.AddRange(TypeQry.Distinct());
+            ViewBag.VeevonautType = new SelectList(TypeList);
+
+            var veevonauts = from m in db.VirtualVeevonauts
+                             select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                veevonauts = veevonauts.Where(s => s.Name.Contains(searchString));
+            }
+            if (String.IsNullOrEmpty(type))
+            {
+                return View(veevonauts);
+            }
+            else
+            {
+                return View(veevonauts.Where(x => x.Type == type));
+            }
         }
 
         //
@@ -27,6 +50,10 @@ namespace MvcVeevonauts.Controllers
         public ViewResult Details(int id)
         {
             VirtualVeevonaut virtualveevonaut = db.VirtualVeevonauts.Find(id);
+            if (virtualveevonaut == null)
+            {
+                HttpNotFound();
+            }
             return View(virtualveevonaut);
         }
 
@@ -60,6 +87,10 @@ namespace MvcVeevonauts.Controllers
         public ActionResult Edit(int id)
         {
             VirtualVeevonaut virtualveevonaut = db.VirtualVeevonauts.Find(id);
+            if (virtualveevonaut == null)
+            {
+                return HttpNotFound();
+            }
             return View(virtualveevonaut);
         }
 
@@ -84,6 +115,10 @@ namespace MvcVeevonauts.Controllers
         public ActionResult Delete(int id)
         {
             VirtualVeevonaut virtualveevonaut = db.VirtualVeevonauts.Find(id);
+            if (virtualveevonaut == null)
+            {
+                return HttpNotFound();
+            }
             return View(virtualveevonaut);
         }
 
@@ -94,6 +129,10 @@ namespace MvcVeevonauts.Controllers
         public ActionResult DeleteConfirmed(int id)
         {            
             VirtualVeevonaut virtualveevonaut = db.VirtualVeevonauts.Find(id);
+            if (virtualveevonaut == null)
+            {
+                return HttpNotFound();
+            }
             db.VirtualVeevonauts.Remove(virtualveevonaut);
             db.SaveChanges();
             return RedirectToAction("Index");
