@@ -1,0 +1,15 @@
+﻿@model MvcVeevonauts.Models.ItemType
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse Genre: @Model.Name</h2>
+<ul>
+    @foreach (var veevonautItem in Model.Items)
+    {
+        <li>
+            @veevonautItem.SubType
+        </li>
+    }
+</ul>

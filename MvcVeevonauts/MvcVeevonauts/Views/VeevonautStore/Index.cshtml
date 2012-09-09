@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcVeevonauts.Models.ItemType>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h2>Browse Item Types</h2>
+<p>
+    Select from @Model.Count() item types:
+</p>
+
+<ul>
+    @foreach (var itemType in Model)
+    {
+        <li>
+            @Html.ActionLink(itemType.Name, "Browse", 
+                new { itemType = itemType.Name })
+        </li>
+    }
+</ul>

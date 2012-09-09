@@ -11,6 +11,8 @@ namespace MvcVeevonauts.Models
     {
         public DbSet<Movie> Movies { get; set; }
         public DbSet<VirtualVeevonaut> VirtualVeevonauts { get; set; }
+        public DbSet<Item> VeevonautItems { get; set; }
+        public DbSet<ItemType> VeevonautItemTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

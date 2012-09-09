@@ -66,14 +66,18 @@
     <Compile Include="Controllers\CompetitionSimController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="Controllers\VirtualVeevonautBookController.cs" />
+    <Compile Include="Controllers\VeevonautItemsController.cs" />
+    <Compile Include="Controllers\VeevonautItemTypesController.cs" />
+    <Compile Include="Controllers\VeevonautStoreController.cs" />
     <Compile Include="Controllers\VirtualVeevonautsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemStyle.cs" />
+    <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\VeevonautType.cs" />
     <Compile Include="Models\VirtualVeevonaut.cs" />
     <Compile Include="Persistence\VeevonautsDBContext.cs" />
     <Compile Include="Persistence\Configuration.cs" />
@@ -193,6 +197,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CompetitionSim\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautStore\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautStore\Browse.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautStore\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItems\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItems\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItems\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItems\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItems\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItemTypes\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItemTypes\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItemTypes\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItemTypes\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VeevonautItemTypes\Delete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

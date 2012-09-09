@@ -5,8 +5,9 @@ using System.Web;
 
 namespace MvcVeevonauts.Models
 {
-    public class VeevonautType
+    public class ItemStyle
     {
-        public string Type { get; set; }
+        public int StyleID { get; set; }
+        public string Name { get; set; }
     }
 }
