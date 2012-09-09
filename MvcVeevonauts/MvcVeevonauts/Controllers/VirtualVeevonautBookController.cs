@@ -16,9 +16,12 @@ namespace MvcVeevonauts.Controllers
             return "Virtual Veevonaut Book: List Coming Soon!";
         }
 
-        public string Browse()
+        public string Browse(string type)
         {
-            return "Virtual Veevonaut Book: Browsing Coming Soon!";
+            string message = HttpUtility.HtmlEncode(
+                "Virtual Veevonaut Book Browse, Type = " + type);
+
+            return message;
         }
 
         public string Details()

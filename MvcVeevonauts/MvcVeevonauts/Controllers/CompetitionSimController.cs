@@ -11,9 +11,9 @@ namespace MvcVeevonauts.Controllers
         //
         // GET: /CompetitionSim/
 
-        public string Index()
+        public ActionResult Index()
         {
-            return "Coming Soon!";
+            return View();
         }
 
     }
