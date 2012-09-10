@@ -9,7 +9,6 @@ namespace MvcVeevonauts.Models
     {
         public int ItemID { get; set; }
 
-        public int ItemTypeID { get; set; }
         public string   SubType { get; set; }
         public ItemType ItemType { get; set; }
         public decimal Price { get; set; }

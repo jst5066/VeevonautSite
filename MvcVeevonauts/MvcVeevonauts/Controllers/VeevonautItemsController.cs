@@ -53,7 +53,7 @@ namespace MvcVeevonauts.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name", item.ItemTypeID);
+            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name");
             return View(item);
         }
         
@@ -63,7 +63,7 @@ namespace MvcVeevonauts.Controllers
         public ActionResult Edit(int id)
         {
             Item item = db.VeevonautItems.Find(id);
-            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name", item.ItemTypeID);
+            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name");
             return View(item);
         }
 
@@ -79,7 +79,7 @@ namespace MvcVeevonauts.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name", item.ItemTypeID);
+            ViewBag.ItemTypeID = new SelectList(db.VeevonautItemTypes, "ItemTypeID", "Name");
             return View(item);
         }
 
