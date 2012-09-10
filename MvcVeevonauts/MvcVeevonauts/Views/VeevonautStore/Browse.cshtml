@@ -9,7 +9,8 @@
     @foreach (var veevonautItem in Model.Items)
     {
         <li>
-            @veevonautItem.SubType
+            @Html.ActionLink(veevonautItem.SubType, "Details", 
+            new { id = veevonautItem.ItemID })
         </li>
     }
 </ul>

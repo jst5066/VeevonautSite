@@ -29,11 +29,11 @@ namespace MvcVeevonauts.Persistence
 
             new List<Item>
             {
-                new Item { SubType = "Cowboy Hat", Type = itemTypes.Single(
+                new Item { SubType = "Cowboy Hat", ItemType = itemTypes.Single(
                     g => g.Name == "Hat"), Price = 1.00M, Style = itemStyles.Single(
                     a => a.Name == "Western"), 
                     ItemArtUrl = "/Content/Images/VeevonautItemPlaceholder.gif"},
-                new Item { SubType = "Astronaut Jacket", Type = itemTypes.Single(
+                new Item { SubType = "Astronaut Jacket", ItemType = itemTypes.Single(
                     g => g.Name == "Jacket"), Price = 1.00M, Style = itemStyles.Single(
                     a => a.Name == "Space"), 
                     ItemArtUrl = "/Content/Images/VeevonautItemPlaceholder.gif"}

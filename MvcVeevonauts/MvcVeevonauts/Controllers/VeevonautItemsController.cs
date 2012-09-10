@@ -18,7 +18,7 @@ namespace MvcVeevonauts.Controllers
 
         public ViewResult Index()
         {
-            var veevonautitems = db.VeevonautItems.Include(i => i.Type);
+            var veevonautitems = db.VeevonautItems.ToList();
             return View(veevonautitems.ToList());
         }
 

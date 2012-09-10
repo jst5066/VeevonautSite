@@ -11,7 +11,7 @@ namespace MvcVeevonauts.Models
 
         public int ItemTypeID { get; set; }
         public string   SubType { get; set; }
-        public ItemType Type { get; set; }
+        public ItemType ItemType { get; set; }
         public decimal Price { get; set; }
         public string ItemArtUrl { get; set; }
         public ItemStyle Style { get; set; }

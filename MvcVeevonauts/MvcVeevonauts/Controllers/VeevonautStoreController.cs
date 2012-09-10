@@ -32,7 +32,11 @@ namespace MvcVeevonauts.Controllers
 
         public ActionResult Details(int id)
         {
-            var Item = new Item { SubType = "Item " + id };
+            var Item = db.VeevonautItems.Find(id);
+            if (Item == null)
+            {
+                return HttpNotFound();
+            }
 
             return View(Item);
         }
